@@ -1,12 +1,15 @@
 # API tests for creating device endpoint
 API tests done with Python, Pytest and Requests. Includes Dockerfile and GH actions pipeline with HTML report.
 
+## Running solution in GitHub
+- GH Actions pipeline is available in Actions tab of repository, it runs docker container and generates HTML report which is available in run artifacts. API url is saved as GH secret.
+
 ## Running solution locally
 - Clone repository locally
 - Run Docker daemon or desktop
-- Build docker image:
+- Build docker image:  
 ```docker build . --file Dockerfile --tag api-test:latest```
-- Run docker 
+- Run docker:  
 ```docker run --rm -e API_URL='<API_base_url_here>' api-test:latest```
 
 ## Structure of the solution
@@ -28,7 +31,7 @@ API tests done with Python, Pytest and Requests. Includes Dockerfile and GH acti
 
 ## Workarounds
 - Since getting device by ID doesn't return proper result - getting device by model name is used instead
-- Some tests are failing because of found issues - additional cleanup after all tests is used that removes all test devices
+- Four tests are failing because of found issues - additional cleanup after all tests is used that removes all test devices
 
 ## Improvements
 #### Given limited time there are some improvements that could be implemented:
