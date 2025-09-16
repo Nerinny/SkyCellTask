@@ -19,7 +19,7 @@ jobs:
     - name: Run the Docker image
       env:
         API_URL: ${{ secrets.API_URL }}
-      run: docker run --rm -v ${{ github.workspace }}/reports:/skycellapi/reports -e API_URL=API_URL skycell-api-test:latest
+      run: docker run --rm -v ${{ github.workspace }}/reports:/skycellapi/reports -e API_URL=$API_URL skycell-api-test:latest
 
     - name: Upload HTML report
       uses: actions/upload-artifact@v4
